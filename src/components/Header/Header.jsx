@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
@@ -23,7 +23,10 @@ const nav__links = [
   },
 ];
 
-const header = () => {
+const Header = () => {
+  const menuRef = useRef();
+  const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
+
   return (
     <>
       <header className="header">
@@ -36,7 +39,7 @@ const header = () => {
 
             {/*========= menu =========*/}
 
-            <div className="navigation">
+            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <div className="menu d-flex aling-items-center gap-5">
                 {nav__links.map((item, index) => (
                   <NavLink
@@ -63,15 +66,14 @@ const header = () => {
 
               <span className="user">
                 <Link to="login">
-                  {" "}
                   {/* link importado do react-dom para que o login seja um link */}
-                  <i class="ri-user-line"></i>{" "}
+                  <i class="ri-user-line"></i>
                   {/* icone importado do react-icons*/}
                 </Link>
               </span>
 
-              <span className="mobile__menu">
-                <i class="ri-menu-line"></i>{" "}
+              <span className="mobile__menu" onClick={toggleMenu}>
+                <i class="ri-menu-line"></i>
                 {/* icone importado do react-icons*/}
               </span>
             </div>
@@ -82,4 +84,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;

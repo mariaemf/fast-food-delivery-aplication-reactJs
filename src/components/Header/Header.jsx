@@ -2,6 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
+import "../../Styles/header.css";
 
 const nav__links = [
   {
@@ -38,7 +39,14 @@ const header = () => {
             <div className="navigation">
               <div className="menu d-flex aling-items-center gap-5">
                 {nav__links.map((item, index) => (
-                  <NavLink to={item.path} key={index}>
+                  <NavLink
+                    to={item.path}
+                    key={index}
+                    /*esta class demonstra para quando estiver selecionado o menu o mesmo deve permanecer com a class ativa => com a cor vermelha*/
+                    className={(navClass) =>
+                      navClass.isActive ? "active__menu" : ""
+                    }
+                  >
                     {item.display}
                   </NavLink>
                 ))}
@@ -50,7 +58,7 @@ const header = () => {
             <div className="nav__right d-flex align-items-center gap-4">
               <span className="cart__icon">
                 <i class="ri-shopping-basket-line"></i>
-                <span className="span cart__bafge">2</span>
+                <span className="span cart__badge">2</span>
               </span>
 
               <span className="user">

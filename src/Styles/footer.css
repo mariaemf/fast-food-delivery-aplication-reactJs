@@ -1,4 +1,86 @@
 .footer {
-  padding: 50px 0px;
-  background: #df2020;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  background: #fde4e4;
+}
+
+.footer__logo img {
+  width: calc(100% - 80%);
+  margin-bottom: 5px;
+  /*margin na parte inferior*/
+}
+
+.footer__logo h5 {
+  font-weight: 600;
+  /*força da fonte*/
+  font-size: 1rem;
+  /*tamanho da fonte*/
+  margin-bottom: 15px;
+}
+
+.footer__logo p {
+  font-size: .9rem;
+  color: #333;
+  line-height: 28px;
+  /*para controlar espaçamento entre linhas de texto*/
+
+}
+
+.delivery__time-item {
+  background: transparent !important;
+}
+
+.delivery__time-item span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #212245;
+  background: transparent;
+}
+
+.delivery__time-item p {
+  color: #212245;
+}
+
+.footer__title {
+  font-size: 1.1rem;
+  color: #212245;
+  font-weight: 600;
+}
+
+.newsletter {
+  padding: 5px;
+  /*define distancia ente o conteudo de um elemento e suas bordas*/
+  border: 1px solid #212245;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.newsletter input {
+  background: transparent;
+  border: none;
+  outline: none;
+  /*remover o comportamento padrão do browser de adicionar uma borda a um elemento quando ele esta selecionado. */
+}
+
+.newsletter input:focus {
+  outline: none;
+}
+
+.newsletter span {
+  background: #212245;
+  padding: 5px 30px;
+  border-radius: 5px;
+
+}
+
+.newsletter span i {
+  color: #fff;
+
+}
+
+.newsletter input::placeholder {
+  color: #212245;
 }

@@ -68,7 +68,7 @@ const Footer = () => {
           </Row>
           <Row className="mt-5">
             <Col lg="6" md="6">
-              <p>
+              <p className="copyright__text">
                 Copyright - 2022, website made by Maria Freitas. All Rights
                 Reserved.
               </p>

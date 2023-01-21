@@ -2,9 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 import heroImg from "../../src/assets/images/hero.png";
+import "../../src/Styles/home.css";
+import featureImg01 from "../assets/images/service-01.png";
+import featureImg02 from "../assets/images/service-02.png";
+import featureImg03 from "../assets/images/service-03.png";
 import Helmet from "../components/Helmet/Helmet.js";
 import Category from "../components/UI/Category/Category";
 import "../Styles/hero-section.css";
+import "../Styles/home.css";
+
+const featureData = [
+  {
+    title: "Quick Delivery",
+    imgUrl: featureImg01,
+    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, non.",
+  },
+  {
+    title: "Super Dine In",
+    imgUrl: featureImg02,
+    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, non.",
+  },
+  {
+    title: "Easy Pick Up",
+    imgUrl: featureImg03,
+    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, non.",
+  },
+];
 
 const Home = () => {
   return (
@@ -59,8 +82,40 @@ const Home = () => {
             </Row>
           </Container>
         </section>
-        <section>
+        <section className="pt-0">
           <Category />
+        </section>
+
+        <section>
+          <Container>
+            <Row>
+              <Col lg="12" className="text-center">
+                <h5 className="feature__subtitle mb-4">What we serve</h5>
+                <h2 className="feature__title">Just sit back at home</h2>
+                <h2 className="feature__title">
+                  We will <span>take care</span>
+                </h2>
+
+                <p className="mb-1 mt-4 feature__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tempore, cumque!
+                </p>
+                <p className="feature__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit,
+                  saepe. {""}
+                </p>
+              </Col>
+              {featureData.map((item, index) => (
+                <Col lg="4" md="4" key={index}>
+                  <div className="feature__item">
+                    <img src={item.imgUrl} alt="feature-img" />
+                    <h5>{item.title}</h5>
+                    <p>{item.desc}</p>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </Container>
         </section>
       </Helmet>
     </>

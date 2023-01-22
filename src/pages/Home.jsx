@@ -106,10 +106,14 @@ const Home = () => {
                 </p>
               </Col>
               {featureData.map((item, index) => (
-                <Col lg="4" md="4" key={index}>
-                  <div className="feature__item">
-                    <img src={item.imgUrl} alt="feature-img" />
-                    <h5>{item.title}</h5>
+                <Col lg="4" md="4" key={index} className="mt-5">
+                  <div className="feature__item text-center px-5 py-3">
+                    <img
+                      src={item.imgUrl}
+                      alt="feature-img"
+                      className="w-25 mb-3"
+                    />
+                    <h5 className="fw-bold mb-3">{item.title}</h5>
                     <p>{item.desc}</p>
                   </div>
                 </Col>

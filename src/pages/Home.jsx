@@ -13,6 +13,8 @@ import Helmet from "../components/Helmet/Helmet.js";
 import Category from "../components/UI/Category/Category";
 import "../Styles/hero-section.css";
 import "../Styles/home.css";
+import ProductCard from "../components/UI/product-card/ProductCard.jsx";
+import products from "../assets/fake-data/products";
 
 const featureData = [
   {
@@ -147,6 +149,12 @@ const Home = () => {
                   </button>
                 </div>
               </Col>
+
+              {products.map((item) => (
+                <Col lg="3" md="4" key={item.id} className="mt-5">
+                  <ProductCard item={item} />
+                </Col>
+              ))}
             </Row>
           </Container>
         </section>

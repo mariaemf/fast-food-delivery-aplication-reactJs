@@ -13,5 +13,35 @@
 
 .feature__item p {
   color: #777;
+}
 
+.food__category {
+  background: #df2020;
+  text-align: center;
+  /*para alinhar texto ao centro*/
+  margin-top: 30px;
+  /*distancia entre margin do topo*/
+  padding: 20px 0px;
+  /*significa que os quatro lados ao redor terao 20px*/
+  border-radius: 8px;
+}
+
+.food__category button {
+  border: none;
+  /*para tirar a borda*/
+  outline: none;
+  padding: 7px 20px;
+  background: transparent;
+  color: #fff;
+}
+
+.food__category button img {
+  width: 20px;
+  height: 20px;
+}
+
+.foodBtnActive {
+  background: #fff !important;
+  border-radius: 5px;
+  color: #df2020 !important;
 }

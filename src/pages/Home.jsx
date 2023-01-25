@@ -88,7 +88,6 @@ const Home = () => {
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Eligendi molestias alias a eius odit minus.
                   </p>
-
                   <div className="hero__btns d-flex align-items-center gap-5 mt-5">
                     <button className="order__btns d-flex align-items-center justify-content-between">
                       Order now <i class="ri-arrow-right-s-line"></i>
@@ -97,7 +96,6 @@ const Home = () => {
                       <Link to="/foods">See all foods</Link>
                     </button>
                   </div>
-
                   <div className="hero__service d-flex align-items-center gap-5 mt-5">
                     <p className="d-flex align-items-center gap-2">
                       <span className="shipping__icon">
@@ -125,7 +123,6 @@ const Home = () => {
         <section className="pt-0">
           <Category />
         </section>
-
         <section>
           <Container>
             <Row>
@@ -135,7 +132,6 @@ const Home = () => {
                 <h2 className="feature__title">
                   We will <span>take care</span>
                 </h2>
-
                 <p className="mb-1 mt-4 feature__text">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Tempore, cumque!
@@ -208,9 +204,8 @@ const Home = () => {
                   </button>
                 </div>
               </Col>
-
               {allProducts.map((item) => (
-                <Col lg="3" md="4" key={item.id} className="mt-5">
+                <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                   <ProductCard item={item} />
                 </Col>
               ))}
@@ -221,5 +216,4 @@ const Home = () => {
     </>
   );
 };
-
 export default Home;

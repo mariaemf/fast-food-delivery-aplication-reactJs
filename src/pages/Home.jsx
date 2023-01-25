@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Row, ListGroup, ListGroupItem } from "reactstrap";
 import heroImg from "../../src/assets/images/hero.png";
 import "../../src/Styles/home.css";
 import foodCategoryImg03 from "../assets/images/bread.png";
@@ -17,6 +17,7 @@ import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 import products from "../assets/fake-data/products";
 import { useState } from "react";
 import { useEffect } from "react";
+import whyImg from "../assets/images/location.png";
 
 const featureData = [
   {
@@ -38,7 +39,7 @@ const featureData = [
 
 const Home = () => {
   const [category, setCategory] = useState("ALL");
-  const [allProducts, setAllProducts] = useState("products");
+  const [allProducts, setAllProducts] = useState(products);
 
   useEffect(() => {
     if (category === "ALL") {
@@ -209,6 +210,75 @@ const Home = () => {
                   <ProductCard item={item} />
                 </Col>
               ))}
+            </Row>
+          </Container>
+        </section>
+
+        <section>
+          <Container>
+            <Row>
+              <Col lg="6" md="6">
+                <img src={whyImg} alt="why-tast-treat" className="w-100" />
+              </Col>
+
+              <Col lg="6" md="6">
+                <div className="why__tasty-treat">
+                  <h2 className="tasty__treat-title mb-4">
+                    Why <span>Tasty Treat?</span>
+                  </h2>
+                  <p className="tasty__treat-desc">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Eius ea distinctio ipsa temporibus modi qui, odit suscipit
+                    aut blanditiis non adipisci tempore possimus praesentium
+                    fugit, sed similique dolore. Consequatur, quisquam!
+                  </p>
+
+                  <ListGroup className="mt-5">
+                    <ListGroupItem className="border-0 ps-0">
+                      <p className="choose__us-title d-flex align-items-center gap-2">
+                        <i class="ri-checkbox-circle-line"></i> Fresh and tasty
+                        foods
+                      </p>
+
+                      <p className="choose__us-desc">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Voluptatem, deserunt!
+                      </p>
+                    </ListGroupItem>
+
+                    <ListGroupItem className="border-0 ps-0">
+                      <p className="choose__us-title d-flex align-items-center gap-2">
+                        <i class="ri-checkbox-circle-line"></i> Quality Support
+                      </p>
+                      <p className="choose__us-desc">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Doloremque, odio.
+                      </p>
+                    </ListGroupItem>
+
+                    <ListGroupItem className="border-0 ps-0">
+                      <p className=" choose__us-title d-flex align-items-center gap-2">
+                        <i class="ri-checkbox-circle-line"></i> Order From and
+                        location
+                      </p>
+                      <p className="choose__us-desc">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Doloremque, odio.
+                      </p>
+                    </ListGroupItem>
+                  </ListGroup>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        <section>
+          <Container>
+            <Row>
+              <Col lg="12" className="text-center mb-5">
+                <h2>Hot Pizza</h2>
+              </Col>
             </Row>
           </Container>
         </section>

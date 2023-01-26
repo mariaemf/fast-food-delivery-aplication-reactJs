@@ -18,6 +18,8 @@ import products from "../assets/fake-data/products";
 import { useState } from "react";
 import { useEffect } from "react";
 import whyImg from "../assets/images/location.png";
+import TestimonialSlider from "../components/UI/slider/TestimonialSlider";
+import networkImg from "../assets/images/network.png";
 
 const featureData = [
   {
@@ -293,6 +295,31 @@ const Home = () => {
                   <ProductCard item={item} />
                 </Col>
               ))}
+            </Row>
+          </Container>
+        </section>
+
+        <section>
+          <Container>
+            <Row>
+              <Col lg="6" md="6">
+                <div className="testimonial ">
+                  <h5 className="testimonial__subtitle mb-4">Testimonial</h5>
+                  <h2 className="testimonial__title mb-4">
+                    What our <span>customers</span> are saying{" "}
+                  </h2>
+                  <p className="testimonia__desc">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Nesciunt fugit non iste possimus commodi reiciendis quos
+                    quidem mollitia tempora. Tempora.s
+                  </p>
+                  <TestimonialSlider />
+                </div>
+              </Col>
+
+              <Col lg="6" md="6">
+                <img src={networkImg} alt="testimonial" className="w-100" />
+              </Col>
             </Row>
           </Container>
         </section>

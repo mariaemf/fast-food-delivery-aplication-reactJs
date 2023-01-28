@@ -104,7 +104,7 @@
 
 @media only screen and (max-width: 992px) {
   .logo img {
-    width: calc(100% -70%);
+    width: calc(100% - 70%);
   }
 
   .logo h5 {
@@ -114,14 +114,12 @@
 
   .navigation {
     position: fixed;
-    /*faz com que o elemento que recebeu essa propriedade nao se mova na tela*/
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.425);
     z-index: 99;
-    /* especifica a ordem da pilha de um elemento do anúncio*/
     display: none;
   }
 
@@ -137,16 +135,14 @@
     align-items: center;
     z-index: 100;
     line-height: 20px;
-    /*altura da linha*/
   }
 
   .menu a {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .mobile__menu {
     display: block;
-    /*faz com que o elemento HTML seja renderizado como bloco, tal como os parágrafos e os cabeçalhos o são*/
   }
 
   .cart__icon i,
@@ -163,12 +159,15 @@
 @media only screen and (max-width: 768px) {
   .header {
     width: 100%;
-    height: 50px;
-    line-height: 50px;
+    height: 80px;
+    line-height: 80px;
+  }
+
+  .logo img {
+    margin-top: -70px !important;
   }
 
   .logo h5 {
-    margin-top: 0px;
+    margin-top: -55px;
   }
-
 }

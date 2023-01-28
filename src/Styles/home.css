@@ -81,3 +81,21 @@
   color: #777;
   line-height: 30px;
 }
+
+@media only screen and (max-width: 576px) {
+  .hero__content {
+    text-align: center;
+  }
+
+  .hero__btns {
+    justify-content: center;
+  }
+
+  .hero__service {
+    justify-content: center;
+  }
+
+  .why__choose-us {
+    padding-top: 0 !important;
+  }
+}

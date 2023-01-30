@@ -147,6 +147,13 @@
     font-size: .7rem;
   }
 
+  .testimonial__subtitle {
+    font-size: 1rem;
+  }
+
+  .testimonia__desc {
+    font-size: 0.8rem;
+  }
 }
 
 @media only screen and (max-width: 576px) {
@@ -164,5 +171,6 @@
 
   .why__choose-us {
     padding-top: 0 !important;
+    /*distancia da margin entre o topo*/
   }
 }

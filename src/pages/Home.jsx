@@ -224,7 +224,7 @@ const Home = () => {
           </Container>
         </section>
 
-        <section>
+        <section className="why__choose-us">
           <Container>
             <Row>
               <Col lg="6" md="6">

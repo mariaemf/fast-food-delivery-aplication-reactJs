@@ -1,9 +1,9 @@
 .header {
   width: 100%;
   /*determina a largua da área do conteúdo de um elemento*/
-  height: 80px;
+  height: 100px;
   /*define altura dos boxes*/
-  line-height: 80px;
+  line-height: 100px;
   /*para controlar espaçamento entre as linhas do texto*/
 }
 
@@ -16,6 +16,7 @@
   width: calc(100% - 60%);
   object-fit: contain;
   /*faz remimensionar a imagm de modo que nao seja cortada e seja mostrada completamente dentro da área definida*/
+  margin-top: -40px;
 }
 
 .logo h5 {
@@ -24,7 +25,7 @@
   font-size: 1rem;
   /*para definir tamanho da fonte*/
   color: #212245;
-  margin-top: -10px;
+  margin-top: -40px;
   /*para definiçao de margin do TOPO*/
   margin-bottom: 0;
   /*para definção de margin da parte INFERIOR*/
@@ -99,8 +100,11 @@
   left: 0;
   box-shadow: 5px 5px 15px -5px #fde4e4;
   /*utilizado para adicionar efeitos de sobra em volta do elemento*/
+  background: #fff;
+  z-index: 99999;
 
 }
+
 
 @media only screen and (max-width: 992px) {
   .logo img {

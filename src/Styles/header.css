@@ -64,7 +64,7 @@
 .cart__badge {
   position: absolute;
   /*posicionar qualquer elemento de acordo com o elemento pai que tenha um position diferente de static.*/
-  top: 20px;
+  top: 30px;
   /*espaço acima do elemento*/
   right: -10px;
   /*define posição horizontal de elemento em relação a borda direita*/

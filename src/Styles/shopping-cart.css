@@ -1,0 +1,26 @@
+.cart__container {
+  position: fixed;
+  /*!para ficar fixado na tela*/
+  top: 0;
+  /*!para não ficar distanciado do topo*/
+  left: 0;
+  width: 100%;
+  /*!para ocupar tamanho total da tela */
+  background: rgba(0, 0, 0, 0.639);
+  z-index: 99999;
+  /*! especifica a ordem da pilha de um elemento do anúncio.*/
+}
+
+.cart {
+  position: absolute;
+  /*! posiciona o elemento de acordo com o elemento pai que tenha um position diferente de static*/
+  top: 0;
+  right: 0;
+  width: 400px;
+  /*!para definir os tamanho do elemento*/
+  height: 100%;
+  background: #fff;
+  z-index: 999999;
+
+
+}

@@ -2,11 +2,13 @@ import React from "react";
 import { ListGroupItem } from "reactstrap";
 import productImg from "../../../assets/images/product_01.1.jpg";
 
+import "../../../Styles/cart-item.css";
+
 const CartItem = () => {
   return (
     <>
-      <ListGroupItem>
-        <div className="cart__item-info">
+      <ListGroupItem className="border-0">
+        <div className="cart__item-info d-flex gap-2">
           <img src={productImg} alt="product-img" />
 
           <div className="cart__product-info">

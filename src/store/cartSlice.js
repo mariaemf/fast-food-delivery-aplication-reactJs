@@ -6,7 +6,7 @@ const initialState = {
   totalAmount: 0,
 };
 
-const cartSlice = {
+const cartSlice = createSlice({
   name: "cart",
   initialState: initialState,
 
@@ -17,9 +17,6 @@ const cartSlice = {
         (item) => item.id === newItem.id
       );
       state.totalQuantity++;
-
-      //note: if you just redux you should not mute state array instead of clone the state array, but if you use redux toolkit
-      //that will not a problem because redux tooltik clone the array behin the scene
 
       if (!existingItem) {
         state.cartItems.push({
@@ -40,7 +37,7 @@ const cartSlice = {
       );
     },
   },
-};
+});
 
 export const cartActions = cartSlice.actions;
 export default cartSlice;

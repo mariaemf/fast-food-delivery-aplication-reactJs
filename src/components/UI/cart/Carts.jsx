@@ -18,11 +18,13 @@ const Carts = () => {
 
           <div className="cart__item-list">
             <CartItem />
+            <CartItem />
+            <CartItem />
           </div>
 
-          <div className="cart__bottom">
+          <div className="cart__bottom d-flex align-items-center justify-content-between">
             <h6>
-              Subtotal amount: <span>$123</span>
+              Subtotal : <span>$123</span>
             </h6>
             <button>
               <Link to="/checkout">Checkout</Link>

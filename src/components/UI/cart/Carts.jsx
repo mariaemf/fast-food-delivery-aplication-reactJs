@@ -8,7 +8,8 @@ import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice";
 
 const Carts = () => {
   const dispatch = useDispatch();
-  const cartProducts = useSelector((state) => state.cart.CartItems);
+  const cartProducts = useSelector((state) => state.cart.cartItems);
+  //const totalAmount = useSelector((state) => state.cart.totalAmount);
 
   const toggleCart = () => {
     dispatch(cartUiActions.toggle());
@@ -25,8 +26,8 @@ const Carts = () => {
           </div>
 
           <div className="cart__item-list">
-            {cartProducts.lenth === 0 ? (
-              <h6 className="text-center mt-5">No Item added to the cart</h6>
+            {(cartProducts || []).length === 0 ? (
+              <h6 className="text-center mt-5">No item added to the cart</h6>
             ) : (
               cartProducts.map((item, index) => (
                 <CartItem item={item} key={index} />

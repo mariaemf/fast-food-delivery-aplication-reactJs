@@ -2,9 +2,32 @@ import React from "react";
 import { ListGroupItem } from "reactstrap";
 
 import "../../../Styles/cart-item.css";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CartItem = ({ item }) => {
   const { id, title, price, image01, quantity, totalPrice } = item;
+
+  const dispatch = useDispatch();
+
+  const incrementItem = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        title,
+        price,
+        image01,
+      })
+    );
+  };
+
+  const deleteItem = () => {
+    dispatch(cartActions.deleteItem(id));
+  };
+
+  const decreaseItem = () => {
+    dispatch(cartActions.removeItem(id));
+  };
 
   return (
     <>
@@ -20,17 +43,17 @@ const CartItem = ({ item }) => {
               </p>
 
               <div className="d-flex align-items-center justify-content-between increase__decrase-btn">
-                <span className="increase__btn">
+                <span className="increase__btn" onClick={incrementItem}>
                   <i class="ri-add-line"></i>
                 </span>
                 <span className="quantity">{quantity}</span>
-                <span className="decrease__btn">
+                <span className="decrease__btn" onClick={decreaseItem}>
                   <i class="ri-subtract-line"></i>
                 </span>
               </div>
             </div>
 
-            <span className="delete__btn">
+            <span className="delete__btn" onClick={deleteItem}>
               <i class="ri-close-line"></i>
             </span>
           </div>

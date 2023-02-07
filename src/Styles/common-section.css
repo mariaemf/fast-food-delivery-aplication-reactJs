@@ -1,0 +1,11 @@
+.common__section {
+  background: linear-gradient(#212245b2, #212245b2), url("../assets/images/banner-02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*A imagem é renderizada, preservando sua proporção intrínseca, com o maior tamanho contido, ou cobrindo a área do elemento pai*/
+  background-position: center;
+  /*define como e onde a imagem de fundo é posicionada*/
+  padding: 80px 0px;
+  /*define uma a distância entre o conteúdo de um elemento e suas bordas*/
+
+}

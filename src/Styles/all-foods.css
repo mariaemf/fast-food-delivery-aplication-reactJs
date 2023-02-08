@@ -10,6 +10,6 @@
   border: none;
 }
 
-.search__widget inpput:focus {
+.search__widget input:focus {
   outline: none;
 }

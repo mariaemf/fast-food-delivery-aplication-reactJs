@@ -1,0 +1,42 @@
+.paginationBttns {
+  width: 80%;
+  /*determina a largura da área de conteúdo*/
+  height: 40px;
+  /*especifica a altura de uma imagem, em pixels*/
+  margin: auto;
+  display: flex;
+  align-items: center;
+  /*para alinhar itens ao centro*/
+  justify-content: center;
+  /*para justificar itens ao centro da tela*/
+  column-gap: .5rem;
+  /*para indicar espaço entre linhas e colunas*/
+  list-style: none;
+  /*é a maneira abreviada de se escrever uma só declaração para duas das propriedades para listas*/
+  margin-top: 30px;
+  /*para distanciar mrgin do topo*/
+
+
+}
+
+.paginationBttns a {
+  padding: 5px 13px;
+  /*define distância entre o conteudo de um elemento e suas bordas*/
+  background: #df2020;
+  color: #fff !important;
+  border-radius: 5px;
+  /*para arredondar borda*/
+  display: flex;
+  /*a propriedade display define os tipos de exibição internos e externos de um elemento*/
+  align-items: center;
+  /*para alinhar itens ao centro*/
+  justify-content: center;
+  /*controla o alinhamento de todos os itens no eixo principal*/
+  cursor: pointer;
+}
+
+.paginationBttns a:hover {
+  background: #212245;
+
+
+}

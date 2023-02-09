@@ -22,7 +22,7 @@
 .paginationBttns a {
   padding: 5px 13px;
   /*define distância entre o conteudo de um elemento e suas bordas*/
-  background: #df2020;
+  background: #212245;
   color: #fff !important;
   border-radius: 5px;
   /*para arredondar borda*/
@@ -36,7 +36,6 @@
 }
 
 .paginationBttns a:hover {
-  background: #212245;
-
+  background: #df2020;
 
 }

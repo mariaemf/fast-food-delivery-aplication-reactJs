@@ -1,47 +1,64 @@
 import React from "react";
-//import products from "../assets/fake-data/products";
-//import { useParams } from "react-router-dom";
+import products from "../assets/fake-data/products";
+import { useParams } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/commom-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import productImg from "../assets/images/product_01.1.jpg";
 import "../Styles/product-details.css";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const FoodDetails = () => {
+  const [tab, setTab] = useState("desc");
+  const { id } = useParams();
+
+  const product = products.find((product) => product.id === id);
+  const [previewImg, setPreviewImg] = useState(product.image01);
+  const { title, price, category, desc } = product;
+
   return (
     <>
       <Helmet title="Product-details">
-        <CommonSection title="product 01" />
+        <CommonSection title={title} />
         <section>
           <Container>
             <Row>
               <Col lg="2" md="2">
                 <div className="product__images">
-                  <div className="img__item">
-                    <img src={productImg} alt="" className="w-50" />
+                  <div
+                    className="img__item mb-3"
+                    onClick={() => setPreviewImg(product.image01)}
+                  >
+                    <img src={product.image01} alt="" className="w-50" />
                   </div>
-                  <div className="img__item">
-                    <img src={productImg} alt="" className="w-50" />
+                  <div
+                    className="img__item mb-3"
+                    onClick={() => setPreviewImg(product.image02)}
+                  >
+                    <img src={product.image02} alt="" className="w-50" />
                   </div>
-                  <div className="img__item">
-                    <img src={productImg} alt="" className="w-50" />
+                  <div
+                    className="img__item"
+                    onClick={() => setPreviewImg(product.image03)}
+                  >
+                    <img src={product.image03} alt="" className="w-50" />
                   </div>
                 </div>
               </Col>
               <Col lg="4" md="4">
                 <div className="product__main-img">
-                  <img src={productImg} alt="" className="w-100" />
+                  <img src={previewImg} alt="" className="w-100" />
                 </div>
               </Col>
-
               <Col lg="6" md="6">
                 <div className="single__product-content">
-                  <h2 className="products__title mb-3">Pizza with mushroom</h2>
+                  <h2 className="products__title mb-3">{title}</h2>
                   <p className="products__price">
-                    Price:<span>$34</span>{" "}
+                    Price:<span>${price}</span>{" "}
                   </p>
                   <p className="category mb-5">
-                    Category: <span>Burger</span>
+                    Category: <span>{category}</span>
                   </p>
 
                   <button className="btn addTOCart__btn">Add to Cart</button>
@@ -49,39 +66,60 @@ const FoodDetails = () => {
               </Col>
               <Col lg="12">
                 <div className="tabs d-flex alingn-items-center gap-5 py-3">
-                  <h6 className="tab__active">Description</h6>
-                  <h6>Review</h6>
+                  <h6
+                    className={`${tab === "desc" ? "tab__active" : ""}`}
+                    onClick={() => setTab("desc")}
+                  >
+                    Description
+                  </h6>
+                  <h6
+                    className={`${tab === "rev" ? "tab__active" : ""}`}
+                    onClick={() => setTab("rev")}
+                  >
+                    Review
+                  </h6>
                 </div>
-
-                <div className="tab__content">
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Dolor iste officiis exercitationem repudiandae mollitia
-                    rerum minus, fugit, atque omnis debitis id ratione ad vel
-                    doloremque eius! Eius quibusdam dignissimos quas dolores, ex
-                    hic aperiam? Quaerat aut unde possimus ipsam accusantium?
-                  </p>
-                </div>
-
-                <div className="tab__form">
-                  <form className="form">
-                    <div className="form__group">
-                      <input type="text" placeholder="Enter your name" />
+                {tab === "desc" ? (
+                  <div className="tab__content">
+                    {" "}
+                    <p>{desc}</p>
+                  </div>
+                ) : (
+                  <div className="tab__form mb-3">
+                    <div className="review pt-5">
+                      <p className="user__name mb-0">Jhon Doe</p>
+                      <p className="user__email">Jhon@email.com</p>
+                      <p className="feedback__text">great product </p>
                     </div>
-
-                    <div className="form__group">
-                      <input type="text" placeholder="Enter your name" />
+                    <div className="review">
+                      <p className="user__name mb-0">Jhon Doe</p>
+                      <p className="user__email">Jhon@email.com</p>
+                      <p className="feedback__text">great product </p>
                     </div>
-
-                    <div className="form__group">
-                      <textarea
-                        rows={5}
-                        type="text"
-                        placeholder="Enter your name"
-                      />
+                    <div className="review">
+                      <p className="user__name mb-0">Jhon Doe</p>
+                      <p className="user__email">Jhon@email.com</p>
+                      <p className="feedback__text">great product </p>
                     </div>
-                  </form>
-                </div>
+                    <form className="form">
+                      <div className="form__group">
+                        <input type="text" placeholder="Enter your name" />
+                      </div>
+
+                      <div className="form__group">
+                        <input type="text" placeholder="Enter your name" />
+                      </div>
+
+                      <div className="form__group">
+                        <textarea
+                          rows={5}
+                          type="text"
+                          placeholder="Enter your name"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                )}
               </Col>
             </Row>
           </Container>

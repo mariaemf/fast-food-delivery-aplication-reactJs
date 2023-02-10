@@ -47,6 +47,42 @@ const FoodDetails = () => {
                   <button className="btn addTOCart__btn">Add to Cart</button>
                 </div>
               </Col>
+              <Col lg="12">
+                <div className="tabs d-flex alingn-items-center gap-5 py-3">
+                  <h6 className="tab__active">Description</h6>
+                  <h6>Review</h6>
+                </div>
+
+                <div className="tab__content">
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dolor iste officiis exercitationem repudiandae mollitia
+                    rerum minus, fugit, atque omnis debitis id ratione ad vel
+                    doloremque eius! Eius quibusdam dignissimos quas dolores, ex
+                    hic aperiam? Quaerat aut unde possimus ipsam accusantium?
+                  </p>
+                </div>
+
+                <div className="tab__form">
+                  <form className="form">
+                    <div className="form__group">
+                      <input type="text" placeholder="Enter your name" />
+                    </div>
+
+                    <div className="form__group">
+                      <input type="text" placeholder="Enter your name" />
+                    </div>
+
+                    <div className="form__group">
+                      <textarea
+                        rows={5}
+                        type="text"
+                        placeholder="Enter your name"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </Col>
             </Row>
           </Container>
         </section>

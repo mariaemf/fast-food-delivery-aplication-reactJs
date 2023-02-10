@@ -1,0 +1,39 @@
+.single__product-content {
+  padding-left: 50px;
+  /*representa a distância do lado esquerdo do box*/
+}
+
+.product__price {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  color: #df2020;
+  margin-bottom: 0;
+}
+
+.products__price span {
+  font-size: 2rem;
+  /*para realizar o tamanho da letra*/
+  color: #df2020;
+  font-weight: 600;
+}
+
+.category {
+  font-weight: 600;
+  /*para dar 'força' a fonte*/
+  color: #212245;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  /*para indicar espaço entre linhas e colunas*/
+  margin-top: 10px;
+}
+
+.category span {
+  padding: 5px 10px;
+  /*define distancia entre conteudo e elemento e suas bordas*/
+  background: #fde4e4;
+  color: #212245;
+  border-radius: 5px;
+  /*para arredondamento das bordas*/
+}

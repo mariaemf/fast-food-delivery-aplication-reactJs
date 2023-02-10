@@ -5,6 +5,7 @@ import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/commom-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import productImg from "../assets/images/product_01.1.jpg";
+import "../Styles/product-details.css";
 
 const FoodDetails = () => {
   return (
@@ -35,9 +36,11 @@ const FoodDetails = () => {
 
               <Col lg="6" md="6">
                 <div className="single__product-content">
-                  <h2 className="products__title">Pizza with mushroom</h2>
-                  <span className="products__price">$34</span>
-                  <p>
+                  <h2 className="products__title mb-3">Pizza with mushroom</h2>
+                  <p className="products__price">
+                    Price:<span>$34</span>{" "}
+                  </p>
+                  <p className="category mb-5">
                     Category: <span>Burger</span>
                   </p>
 

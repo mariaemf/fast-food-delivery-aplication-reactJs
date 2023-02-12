@@ -87,8 +87,9 @@ const FoodDetails = () => {
               <Col lg="6" md="6">
                 <div className="single__product-content">
                   <h2 className="products__title mb-3">{title}</h2>
-                  <p className="products__price">
-                    Price:<span>${price}</span>{" "}
+                  <p className="product__price">
+                    {" "}
+                    Price: <span>${price}</span>
                   </p>
                   <p className="category mb-5">
                     Category: <span>{category}</span>

@@ -48,7 +48,7 @@ const AllFoods = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="6" xs="12">
-              <div className="search__widget d-flex align-items-center justify-content-between ">
+              <div className="search__widget d-flex align-items-center justify-content-between">
                 <input
                   type="text"
                   placeholder="I'm looking for...."

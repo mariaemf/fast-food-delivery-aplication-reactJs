@@ -4,18 +4,51 @@ import { useParams } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/commom-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
-import productImg from "../assets/images/product_01.1.jpg";
 import "../Styles/product-details.css";
 import { useState } from "react";
 import { useEffect } from "react";
 
+import { useDispatch } from "react-redux/es/exports";
+import { cartActions } from "../store/shopping-cart/cartSlice";
+
+import ProductCard from "../components/UI/product-card/ProductCard";
+
 const FoodDetails = () => {
   const [tab, setTab] = useState("desc");
+  const [enteredName, setEnteredName] = useState("");
+  const [enteredEmail, setenteredEmail] = useState("");
+  const [reviewMsg, setReviewMsg] = useState("");
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   const product = products.find((product) => product.id === id);
   const [previewImg, setPreviewImg] = useState(product.image01);
-  const { title, price, category, desc } = product;
+  const { title, price, category, desc, image01 } = product;
+
+  const relatedProduct = products.filter((item) => category === item.category);
+
+  const addItem = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        title,
+        price,
+        image01,
+      })
+    );
+  }; //colocado ao onClicke do botao de add To cart
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    setPreviewImg(product.image01);
+  }, [product]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [product]);
 
   return (
     <>
@@ -61,7 +94,9 @@ const FoodDetails = () => {
                     Category: <span>{category}</span>
                   </p>
 
-                  <button className="btn addTOCart__btn">Add to Cart</button>
+                  <button onClick={addItem} className="btn addTOCart__btn">
+                    Add to Cart
+                  </button>
                 </div>
               </Col>
               <Col lg="12">
@@ -91,6 +126,7 @@ const FoodDetails = () => {
                       <p className="user__email">Jhon@email.com</p>
                       <p className="feedback__text">great product </p>
                     </div>
+
                     <div className="review">
                       <p className="user__name mb-0">Jhon Doe</p>
                       <p className="user__email">Jhon@email.com</p>
@@ -101,26 +137,49 @@ const FoodDetails = () => {
                       <p className="user__email">Jhon@email.com</p>
                       <p className="feedback__text">great product </p>
                     </div>
-                    <form className="form">
+                    <form className="form" onSubmit={submitHandler}>
                       <div className="form__group">
-                        <input type="text" placeholder="Enter your name" />
+                        <input
+                          type="text"
+                          placeholder="Enter your name"
+                          onChange={(e) => setEnteredName(e.target.value)}
+                          required /* funciona para que o usuário não envie o formulário sem algum campo preenchido*/
+                        />
                       </div>
 
                       <div className="form__group">
-                        <input type="text" placeholder="Enter your name" />
+                        <input
+                          type="text"
+                          placeholder="Enter your email"
+                          onChange={(e) => setenteredEmail(e.target.value)}
+                          required /* funciona para que o usuário não envie o formulário sem algum campo preenchido*/
+                        />
                       </div>
 
                       <div className="form__group">
                         <textarea
                           rows={5}
                           type="text"
-                          placeholder="Enter your name"
+                          placeholder="Write your review"
+                          onChange={(e) => setReviewMsg(e.target.value)}
+                          required /* funciona para que o usuário não envie o formulário sem algum campo preenchido*/
                         />
                       </div>
+                      <button type="submit" className="addTOCart__btn">
+                        Submit
+                      </button>
                     </form>
                   </div>
                 )}
               </Col>
+              <Col lg="12" className="mb-5 mt-4">
+                <h2 className="related__Product-title">You might also like</h2>
+              </Col>
+              {relatedProduct.map((item) => (
+                <Col lg="3" md="4" sm="6" xs="6" className="mb-4" key={item.id}>
+                  <ProductCard item={item} />
+                </Col>
+              ))}
             </Row>
           </Container>
         </section>

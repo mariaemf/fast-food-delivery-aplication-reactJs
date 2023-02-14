@@ -5,6 +5,7 @@ import "../Styles/cart-page.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import { cartActions, CartActions } from "../store/shopping-cart/cartSlice";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -13,7 +14,7 @@ const Cart = () => {
   return (
     <>
       <Helmet title="Cart">
-        <CommonSection title="your Cart" />
+        <CommonSection title="Your Cart" />
         <section>
           <Container>
             <Row>
@@ -38,13 +39,19 @@ const Cart = () => {
                     </tbody>
                   </table>
                 )}
-                <div>
+                <div className="mt-4">
                   <h6>
-                    Subtotal: <span> ${totalAmount}</span>
+                    Subtotal: ${" "}
+                    <span className="cart__subtotal">{totalAmount}</span>
                   </h6>
                   <p>Taxes and shipping will calculate at checkout </p>
-                  <div>
-                    <button className="addToCart__btn"></button>
+                  <div className="cart__page-btn">
+                    <button className="addTOCart__btn me-4">
+                      <Link to={"/foods"}>Continue Shopping</Link>
+                    </button>
+                    <button className="addTOCart__btn">
+                      <Link to={"/checkout"}>Proceed to checkout</Link>
+                    </button>
                   </div>
                 </div>
               </Col>

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import CommonSection from "../components/UI/commom-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
+import "../Styles/checkout.css";
 
 const Checkout = () => {
   const cartTotalAmount = useSelector((state) => state.cart.totalAmount);
@@ -44,14 +45,14 @@ const Checkout = () => {
 
               <Col lg="4" md="6">
                 <div className="checkout__bill">
-                  <h6>
+                  <h6 className="d-flex align-items-center justify-content-between mb-3">
                     Subtotal:<span>${cartTotalAmount}</span>
                   </h6>
-                  <h6>
+                  <h6 className="d-flex align-items-center justify-content-between">
                     Shipping:<span>${shippingCost}</span>
                   </h6>
-                  <div>
-                    <h5>
+                  <div className="checkout__total">
+                    <h5 className="d-flex align-items-center justify-content-between">
                       Total: <span>${totalAmount}</span>
                     </h5>
                   </div>
